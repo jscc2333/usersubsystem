@@ -1,0 +1,119 @@
+{
+  "goods": [{
+      "id": "00001",
+      "name": "JavaScript权威指南",
+      "desc": "OReilly精品图书系列：JavaScript权威指南,经典的JavaScript犀牛书！第6版特别涵盖了HTML%和ECMAScript5",
+      "price": 111.20,
+      "colQuantity": 15600,
+      "shop": "机械工业出版社",
+      "url": "http://localhost:3000/images/56ea5e6aN38c0f2b8.jpg"
+    },
+    {
+      "id": "00002",
+      "name": "高性能JavaScript",
+      "desc": "高性能JavaScipt，值得所有前端人员细细品读的经典，来自一线实践经验总结，提升JavaScript性能立竿见影",
+      "price": 45.80,
+      "colQuantity": 1926,
+      "shop": "电子工业出版社",
+      "url": "http://localhost:3000/images/55ec039eNb9a5ff3e.jpg"
+    },
+    {
+      "id": "00003",
+      "name": "JavaScript DOM编程艺术",
+      "desc": "JavaScript DOM编程艺术 （第2版）详解开发WEB应用的基石 W3C DOM标准",
+      "price": 38.90,
+      "colQuantity": 43800,
+      "shop": "机械工业出版社",
+      "url": "http://localhost:3000/images/592bf164N56d3e3db.jpg"
+    },
+    {
+      "id": "00004",
+      "name": "Effective JavaScript",
+      "desc": "Effective JavaScript：编写高质量的代码",
+      "price": 38.70,
+      "colQuantity": 720,
+      "shop": "机械工业出版社",
+      "url": "http://localhost:3000/images/rBEhU1KB97wIAAAAAAPTJ85RehMAAFZcgKfxfkAA9M_171.jpg"
+    },
+    {
+      "id": "00005",
+      "name": "JavaScript高级程序设计",
+      "desc": "JavaScript高级程序设计 （第3版）",
+      "price": 69.80,
+      "colQuantity": 100,
+      "shop": "XXX店铺",
+      "url": "http://localhost:3000/images/592bf164N7a4187c3.jpg"
+    },
+    {
+      "id": "00006",
+      "name": "Mastering Reactive Javascript",
+      "desc": "Mastering Reactive Javascript",
+      "price": 521.00,
+      "colQuantity": 14,
+      "shop": "XXX店铺",
+      "url": "http://localhost:3000/images/59b65667N5ec5eccb.jpg"
+    },
+    {
+      "id": "00007",
+      "name": "JavaScript语言精粹",
+      "desc": "JavaScript语言精粹 （修订版） 深入挖掘JavaScript精华",
+      "price": 32.90,
+      "colQuantity": 1030,
+      "shop": "电子工业出版社",
+      "url": "http://localhost:3000/images/591d8d2bNaa708e91.jpg"
+    },
+    {
+      "id": "00008",
+      "name": "利用Phython进行数据分析",
+      "desc": "利用Phython进行数据分析，大量实践案例",
+      "price": 58.70,
+      "colQuantity": 12000,
+      "shop": "机械工业出版社",
+      "url": "http://localhost:3000/images/rBEhV1J8SfQIAAAAAASd3wNr4o8AAFM0AF8btQABJ33939.jpg"
+    },
+    {
+      "id": "00009",
+      "name": "JavaScript权威指南",
+      "desc": "OReilly精品图书系列：JavaScript权威指南,经典的JavaScript犀牛书！第6版特别涵盖了HTML%和ECMAScript5",
+      "price": 111.20,
+      "colQuantity": 15600,
+      "shop": "机械工业出版社",
+      "url": "http://localhost:3000/images/56ea5e6aN38c0f2b8.jpg"
+    }, {
+      "id": "00010",
+      "name": "高性能JavaScript",
+      "desc": "高性能JavaScipt，值得所有前端人员细细品读的经典，来自一线实践经验总结，提升JavaScript性能立竿见影",
+      "price": 45.80,
+      "colQuantity": 1926,
+      "shop": "电子工业出版社",
+      "url": "http://localhost:3000/images/55ec039eNb9a5ff3e.jpg"
+    }, {
+      "id": "00011",
+      "name": "JavaScript DOM编程艺术",
+      "desc": "JavaScript DOM编程艺术 （第2版）详解开发WEB应用的基石 W3C DOM标准",
+      "price": 38.90,
+      "colQuantity": 43800,
+      "shop": "机械工业出版社",
+      "url": "http://localhost:3000/images/592bf164N56d3e3db.jpg"
+    }, {
+      "id": "00012",
+      "name": "Effective JavaScript",
+      "desc": "Effective JavaScript：编写高质量的代码",
+      "price": 38.70,
+      "colQuantity": 720,
+      "shop": "机械工业出版社",
+      "url": "http://localhost:3000/images/rBEhU1KB97wIAAAAAAPTJ85RehMAAFZcgKfxfkAA9M_171.jpg"
+    }
+  ],
+  "shops": [{
+    "id": "00001",
+    "name": "某某某店铺",
+    "colQuantity":400,
+    "url":"http://localhost:3000/images/rBEhU1KB97wIAAAAAAPTJ85RehMAAFZcgKfxfkAA9M_171.jpg"
+  },{
+    "id":"00002",
+    "name":"另一家店铺",
+    "colQuantity":120,
+    "url":"http://localhost:3000/images/rBEhU1KB97wIAAAAAAPTJ85RehMAAFZcgKfxfkAA9M_171.jpg"
+  }]
+}
