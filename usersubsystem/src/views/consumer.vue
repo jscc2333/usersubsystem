@@ -79,11 +79,11 @@
       top: 106px;
       bottom: 0;
       transition: all .3s linear;
-      border-right: 1px solid rgba(147,153,159,0.6);
+      border-right: 1px solid rgba(147, 153, 159, 0.6);
       box-shadow: 1px 1px 2px #000;
       font-size: 0;
-      &:hover{
-        width:100px;
+      &:hover {
+        width: 100px;
         box-shadow: 1px 1px 3px rgba(0, 160, 220, 0.8);
       }
       .sidebar-list {
@@ -97,11 +97,13 @@
           background: rgba(147, 153, 159, 0.3);
           overflow: hidden;
           height: 20px;
+          font-size: 0;
           line-height: 20px;
           transition: all .3s ease-in-out;
-          &:hover{
-            border:1px inset rgba(0, 160, 220, 0.8);
-            background: linear-gradient(left,#fff,#f3f5f7)
+          &:hover {
+            border: 1px inset rgba(0, 160, 220, 0.8);
+            background: linear-gradient(left, #fff, #f3f5f7);
+            width: auto;
           }
           .link {
             font-size: 16px;

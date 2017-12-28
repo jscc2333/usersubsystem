@@ -1,0 +1,70 @@
+{
+  "orders": [{
+      "id": "00001",
+      "shops": [{
+        "name": "XXX的书店",
+        "goods": [{
+          "name": "JavaScript权威指南",
+          "price": 111.20,
+          "count": 1,
+          "image": "http://localhost:3000/images/56ea5e6aN38c0f2b8.jpg"
+        }, {
+          "name": "高性能JavaScript",
+          "price": 45.80,
+          "count": 2,
+          "image": "http://localhost:3000/images/55ec039eNb9a5ff3e.jpg"
+        }, {
+          "name": "JavaScript DOM编程艺术",
+          "price": 38.90,
+          "count": 1,
+          "image": "http://localhost:3000/images/592bf164N56d3e3db.jpg"
+        }]
+      }, {
+        "name": "XXX的另外一家书店",
+        "goods": [{
+          "name": "JavaScript高级程序设计",
+          "price": 68.90,
+          "count": 2,
+          "image": "http://localhost:3000/images/592bf164N7a4187c3.jpg"
+        }]
+      }]
+    },
+
+    {
+      "id": "00002",
+      "shops": [{
+        "name": "C的店铺",
+        "goods": [{
+          "name": "JavaScript高级程序设计",
+          "price": 68.90,
+          "count": 2,
+          "image": "http://localhost:3000/images/592bf164N7a4187c3.jpg"
+        }]
+      }]
+    },
+    {
+      "id": "00003",
+      "shops": [{
+        "name": "C的店铺",
+        "goods": [{
+          "name": "JavaScript高级程序设计",
+          "price": 68.90,
+          "count": 2,
+          "image": "http://localhost:3000/images/592bf164N7a4187c3.jpg"
+        }]
+      }]
+    },
+    {
+      "id": "00004",
+      "shops": [{
+        "name": "C的店铺",
+        "goods": [{
+          "name": "JavaScript高级程序设计",
+          "price": 68.90,
+          "count": 1,
+          "image": "http://localhost:3000/images/592bf164N7a4187c3.jpg"
+        }]
+      }]
+    }
+  ]
+}

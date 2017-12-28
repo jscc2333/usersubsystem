@@ -10,6 +10,7 @@ const users = require('./routes/users');
 const addresses = require('./routes/addresses');
 const collections = require('./routes/collections')
 const evaluations = require('./routes/evaluations')
+const orders = require('./routes/order')
 const passport = require('./routes/passport')
 
 const app = express();
@@ -33,6 +34,7 @@ app.use('/addresses', addresses)
 app.use('/collections',collections)
 app.use('/evaluations',evaluations)
 app.use('/passport',passport)
+app.use('/orders',orders)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

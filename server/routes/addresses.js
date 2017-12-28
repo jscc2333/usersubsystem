@@ -9,7 +9,6 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/fetchAddress', (req, res, next) => {
-  console.log('run to here')
   const data = req.body
   const queryStr = 'SELECT * FROM address WHERE consumer_name = ?'
   connection.query(queryStr, data.username, (err, results) => {
