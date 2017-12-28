@@ -155,7 +155,7 @@
     padding: 0 30px;
     .content-wrapper {
       position: relative;
-      width: 80%;
+      width: 70%;
       margin: 0 auto;
       .evaluations {
         margin-top: 20px;

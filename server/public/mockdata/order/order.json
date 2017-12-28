@@ -37,7 +37,7 @@
         "goods": [{
           "name": "JavaScript高级程序设计",
           "price": 68.90,
-          "count": 2,
+          "count": 4,
           "image": "http://localhost:3000/images/592bf164N7a4187c3.jpg"
         }]
       }]
@@ -62,6 +62,18 @@
           "name": "JavaScript高级程序设计",
           "price": 68.90,
           "count": 1,
+          "image": "http://localhost:3000/images/592bf164N7a4187c3.jpg"
+        }]
+      }]
+    },
+    {
+      "id": "00005",
+      "shops": [{
+        "name": "C的店铺",
+        "goods": [{
+          "name": "JavaScript高级程序设计",
+          "price": 68.90,
+          "count": 3,
           "image": "http://localhost:3000/images/592bf164N7a4187c3.jpg"
         }]
       }]

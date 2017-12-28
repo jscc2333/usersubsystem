@@ -51,6 +51,7 @@
           text: '所有订单',
         }],
         page: 0,
+        max: false,
         orders: [],
       }
     },
@@ -63,6 +64,9 @@
         page: 0,
       }).then((res) => {
         this.orders = res.data
+        if (this.orders.length < 4) {
+          this.max = true
+        }
       }).catch((err) => {
         throw err
       })
@@ -76,10 +80,50 @@
             price += good.price * good.count
           }
         }
-        return price
+        return price.toFixed(2)
       },
-      goPrePage() {},
-      goNextPage() {},
+      goPrePage() {
+        if (this.page === 0) {
+          return false
+        }
+        this.page -= 1
+        if (this.max) {
+          this.max = false
+        }
+        axios
+          .post('/api/orders/fetchOrders', {
+            page: this.page,
+          })
+          .then((res) => {
+            this.orders = res.data
+          })
+          .catch((err) => {
+            if (err) {
+              throw err
+            }
+          })
+        return true
+      },
+      goNextPage() {
+        if (this.max) {
+          return false
+        }
+        this.page += 1
+        axios
+          .post('/api/orders/fetchOrders', {
+            page: this.page,
+          })
+          .then((res) => {
+            this.orders = res.data
+            if (this.orders.length < 4) {
+              this.max = true
+            }
+          })
+          .catch((err) => {
+            throw err
+          })
+        return true
+      },
     },
   }
 
