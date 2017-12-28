@@ -40,7 +40,7 @@
 
 <script type="text/ecmascript-6">
   import axios from 'axios'
-  import vNav from '@/components/nav'
+  import vNav from '@/components/universal/nav'
 
   export default {
     name: 'order',

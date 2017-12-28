@@ -26,7 +26,7 @@
     mapGetters,
   } from 'vuex'
   import axios from 'axios'
-  import vNav from '@/components/nav'
+  import vNav from '@/components/universal/nav'
 
   export default {
     name: 'collection',

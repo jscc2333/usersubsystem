@@ -32,7 +32,7 @@
   import {
     mapGetters,
   } from 'vuex'
-  import vNav from '@/components/nav'
+  import vNav from '@/components/universal/nav'
   import star from '@/components/star/star'
 
   export default {

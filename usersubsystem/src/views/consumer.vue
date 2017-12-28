@@ -29,14 +29,13 @@
 </template>
 <script>
   import router from '@/router'
-  import vHeader from '@/components/header'
-  import vFooter from '@/components/footer'
-  import information from '@/components/information'
-  import vAddress from '@/components/address'
-  import evaluation from '@/components/evaluation'
-  import order from '@/components/order'
-  import shop from '@/components/shop'
-  import collection from '@/components/collection'
+  import vHeader from '@/components/universal/header'
+  import vFooter from '@/components/universal/footer'
+  import information from '@/components/consumer/information'
+  import vAddress from '@/components/consumer/address'
+  import evaluation from '@/components/consumer/evaluation'
+  import order from '@/components/consumer/order'
+  import collection from '@/components/consumer/collection'
 
   export default {
     name: 'consumer',
@@ -52,7 +51,6 @@
       vAddress,
       evaluation,
       order,
-      shop,
       collection,
     },
     created() {

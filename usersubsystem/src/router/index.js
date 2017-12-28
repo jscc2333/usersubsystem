@@ -2,15 +2,15 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/views/home'
 import consumer from '@/views/consumer'
+import seller from '@/views/seller'
 import passport from '@/views/passport'
-import login from '@/components/login'
-import registration from '@/components/registration'
-import information from '@/components/information'
-import address from '@/components/address'
-import evaluation from '@/components/evaluation'
-import order from '@/components/order'
-import shop from '@/components/shop'
-import collection from '@/components/collection'
+import login from '@/components/universal/login'
+import registration from '@/components/universal/registration'
+import information from '@/components/consumer/information'
+import address from '@/components/consumer/address'
+import evaluation from '@/components/consumer/evaluation'
+import order from '@/components/consumer/order'
+import collection from '@/components/consumer/collection'
 
 Vue.use(Router)
 
@@ -58,10 +58,10 @@ export default new Router({
       name: 'order',
       path: '/consumer/order',
       component: order,
-    }, {
-      name: 'shop',
-      path: '/consumer/shop',
-      component: shop,
     }],
+  }, {
+    name: 'seller',
+    path: 'seller/:username',
+    component: seller,
   }],
 })

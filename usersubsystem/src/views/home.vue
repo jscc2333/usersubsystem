@@ -20,9 +20,9 @@
 </template>
 <script>
 import router from '@/router'
-import login from '@/components/login'
-import register from '@/components/registration'
-import vFooter from '@/components/footer'
+import login from '@/components/universal/login'
+import register from '@/components/universal/registration'
+import vFooter from '@/components/universal/footer'
 
 export default {
   name: 'login',

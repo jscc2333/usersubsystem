@@ -11,17 +11,17 @@
           <input type="file" accept="image/*" class="upload" @change="onFileChange($event)">
         </div>
         <div class="grade">
-          <img class="logo" src="../../static/images/information/level.png" alt="">
+          <img class="logo" src="../../../static/images/information/level.png" alt="">
           <span class="desc">等级</span>
           <span class="value grade-value">{{briefInfo.grade}}</span>
         </div>
         <div class="integral">
-          <img class="logo" src="../../static/images/information/integral.png" alt="">
+          <img class="logo" src="../../../static/images/information/integral.png" alt="">
           <span class="desc">积分</span>
           <span class="value integral-value">{{briefInfo.integral}}</span>
         </div>
         <div class="gold">
-          <img class="logo" src="../../static/images/information/gold.png" alt="">
+          <img class="logo" src="../../../static/images/information/gold.png" alt="">
           <span class="desc">金币</span>
           <span class="value gold-value">{{briefInfo.gold}}</span>
         </div>
@@ -49,7 +49,7 @@
 <script type="text/ecmascript-6">
   import axios from 'axios'
   import router from '@/router'
-  import vNav from '@/components/nav'
+  import vNav from '@/components/universal/nav'
 
   export default {
     name: 'information',
