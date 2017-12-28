@@ -8,7 +8,7 @@
         <h1 class="username">{{briefInfo.username}}</h1>
         <div class="avatar">
           <img :src="getAvatarSrc" alt="avatar">
-          <input type="file" class="upload" @change="onFileChange($event)">
+          <input type="file" accept="image/*" class="upload" @change="onFileChange($event)">
         </div>
         <div class="grade">
           <img class="logo" src="../../static/images/information/level.png" alt="">
@@ -62,7 +62,8 @@
         signin: '签',
         editMode: false,
         editOption: true,
-        briefInfo: [],
+        avatarSrc: '',
+        briefInfo: {},
         detailInfo: [],
         detailType: ['用户名', '邮箱', '手机号码', '真实姓名', '身份证', '签名'],
         detailTypeUs: [],
@@ -71,7 +72,7 @@
     },
     computed: {
       getAvatarSrc() {
-        return this.briefInfo.avatar === null ? '../../static/images/defaultAvatar/defaultAvatar.jpg' : this.briefInfo.avatar
+        return this.briefInfo.avatar === null ? 'http://localhost:3000/defaultAvatar.jpg' : this.briefInfo.avatar
       },
       getEditText() {
         return this.editOption === true ? '编辑资料' : '保存更改'
@@ -134,8 +135,38 @@
           })
       },
       onFileChange(e) {
-        const files = e.target.files || e.dataTransfer.files
-        console.log(files)
+        const file = e.target.files[0] || e.dataTransfer.files[0]
+        if (!file) {
+          return
+        }
+        const data = new FormData()
+        data.append('avatar', file)
+        data.append('username', this.username)
+        const reader = new FileReader()
+        reader.onload = () => {
+          this.avatarSrc = e.target.result
+        }
+        axios.post('/api/users/changeAvatar', data, {
+          header: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }).then((res) => {
+          if (res.data.status === 1) {
+            axios.post('/api/users/fetchInfo', {
+              username: this.username,
+              type: 'consumer',
+            }).then((resInner) => {
+              this.briefInfo.avatar = resInner.data[0].avatar
+            }).catch((err) => {
+              throw err
+            })
+          } else {
+            throw Error(res.data.message)
+          }
+          reader.readAsDataURL(file)
+        }).catch((err) => {
+          throw err
+        })
       },
       addGold() {
         const date = new Date().getTime()
@@ -144,7 +175,7 @@
           date: date,
         }).then((res) => {
           if (res.status === 1) {
-            vm.$set(this.briefInfo, gold, gold + 5)
+            this.briefInfo.gold += 5
           }
         }).catch((err) => {
           throw err
@@ -181,15 +212,16 @@
           margin-top: 20px;
           text-align: center;
           img {
-            width: 30%;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
           }
-          .upload{
+          .upload {
             position: absolute;
             width: 30%;
-            height:100%;
-            left:35%;
-            z-index:1000;
+            height: 100%;
+            left: 35%;
+            z-index: 1000;
             cursor: pointer;
             opacity: 0;
           }
@@ -252,11 +284,11 @@
           cursor: pointer;
           font-size: 14px;
           border-radius: 50%;
-          background:rgba(147,153,159,0.6);
-          z-index:1000;
-          &:hover{
+          background: rgba(147, 153, 159, 0.6);
+          z-index: 1000;
+          &:hover {
             background: rgb(0, 160, 220);
-            color:#f3f5f7;
+            color: #f3f5f7;
           }
         }
       }

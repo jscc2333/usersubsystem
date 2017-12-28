@@ -58,7 +58,12 @@
     created() {
       this.username = this.$route.params.username
       this.$nextTick(() => {
-        router.push({ name: 'information', params: { username: this.username } })
+        router.push({
+          name: 'information',
+          params: {
+            username: this.username,
+          },
+        })
       })
     },
   }
@@ -66,23 +71,38 @@
 </script>
 <style lang="less">
   .consumer {
-    position: relative;
-    // height:100%;
+    position: relative; // height:100%;
     min-height: 100%;
     .sidebar {
       position: absolute;
-      top: 46px;
-      padding: 60px 0 0 10px;
+      width: 30px;
+      top: 106px;
+      bottom: 0;
+      transition: all .3s linear;
+      border-right: 1px solid rgba(147,153,159,0.6);
+      box-shadow: 1px 1px 2px #000;
       font-size: 0;
+      &:hover{
+        width:100px;
+        box-shadow: 1px 1px 3px rgba(0, 160, 220, 0.8);
+      }
       .sidebar-list {
         padding: 2px;
         border-radius: 5px;
-        border: 1px solid black;
         .sidebar-item {
+          margin-bottom: 10px;
           padding: 5px;
           border: 1px solid #f3f5f7;
           border-radius: 5px;
           background: rgba(147, 153, 159, 0.3);
+          overflow: hidden;
+          height: 20px;
+          line-height: 20px;
+          transition: all .3s ease-in-out;
+          &:hover{
+            border:1px inset rgba(0, 160, 220, 0.8);
+            background: linear-gradient(left,#fff,#f3f5f7)
+          }
           .link {
             font-size: 16px;
             color: #000;
@@ -96,7 +116,7 @@
       margin: 0 auto;
       padding-bottom: 30px;
       .bg {
-        z-index:-1;
+        z-index: -1;
         position: absolute;
         left: -10%;
         width: 115.51%;

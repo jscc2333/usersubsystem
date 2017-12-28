@@ -1,10 +1,23 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
+const fs = require('fs')
 const moment = require('moment')
 const mysql = require('mysql')
+const multer = require('multer')
 const connection = require('../public/javascripts/db')
 const utils = require('../public/javascripts/utils')
-
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './avatars')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+const upload = multer({
+  storage: storage
+})
 
 router.get('/', function (req, res, next) {
   res.send('respond with a resource');
@@ -44,6 +57,7 @@ router.post('/signin', (req, res, next) => {
     }
   })
 })
+
 router.post('/signup', (req, res, next) => {
   const data = req.body
   let value = []
@@ -147,7 +161,7 @@ router.post('/addGold', (req, res, next) => {
     if (err) {
       throw err
     }
-    const data = [results[0].consumer_gold+5,date,username]
+    const data = [results[0].consumer_gold + 5, date, username]
     if (!results[0].consumer_signinTime) {
       connection.query('UPDATE  consumer SET consumer_gold = ? ,consumer_signinTime = ? WHERE consumer_name = ?', data, (err, results) => {
         if (err) {
@@ -155,10 +169,10 @@ router.post('/addGold', (req, res, next) => {
         }
         res.send({
           status: 1,
-          message:'签到成功'
+          message: '签到成功'
         })
       })
-    } else { 
+    } else {
       const dbDate = moment(results[0].consumer_signinTime).format('YY-MM-DD')
       if (utils.compareTime(dbDate, date)) {
         connection.query('UPDATE  consumer SET consumer_gold = ? ,consumer_signinTime = ? WHERE consumer_name = ?', data, (err, results) => {
@@ -170,15 +184,38 @@ router.post('/addGold', (req, res, next) => {
             message: '签到成功'
           })
         })
-      } else { 
+      } else {
         res.send({
           status: 0,
-          message:'请明天再来签到'
+          message: '请明天再来签到'
         })
       }
     }
 
   })
 
+})
+router.post('/changeAvatar', upload.single('avatar'), (req, res, next) => {
+  const username = req.body.username
+  const filename = `http://localhost:3000/${req.file.originalname}`
+  const data = [filename,username]
+  const updateStr = 'UPDATE consumer SET consumer_avatar = ? WHERE consumer_name = ?'
+  
+  connection.query(updateStr, data, (err, results) => { 
+    if (err) { 
+      throw err
+    }
+    if (results.changedRows === 1) {
+      res.send({
+        status: 1,
+        message: '头像修改成功'
+      })
+    } else { 
+      res.send({
+        status: 0,
+        message:'修改失败'
+      })
+    }
+  })
 })
 module.exports = router;
