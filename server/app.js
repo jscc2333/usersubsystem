@@ -12,6 +12,7 @@ const collections = require('./routes/collections')
 const evaluations = require('./routes/evaluations')
 const orders = require('./routes/order')
 const passport = require('./routes/passport')
+const shop = require('./routes/shop')
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use('/collections',collections)
 app.use('/evaluations',evaluations)
 app.use('/passport',passport)
 app.use('/orders',orders)
+app.use('/shop',shop)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

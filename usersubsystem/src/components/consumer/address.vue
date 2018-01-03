@@ -70,7 +70,6 @@
     checkValue,
   } from '@/assets/js/utils'
   import vNav from '@/components/universal/nav'
-  import vFooter from '@/components/universal/footer'
 
   export default {
     name: 'address',
@@ -96,7 +95,6 @@
     },
     components: {
       vNav,
-      vFooter,
     },
     created() {
       this.username = this.$route.params.username

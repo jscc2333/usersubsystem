@@ -11,6 +11,10 @@ import address from '@/components/consumer/address'
 import evaluation from '@/components/consumer/evaluation'
 import order from '@/components/consumer/order'
 import collection from '@/components/consumer/collection'
+import sInformation from '@/components/seller/sInformation'
+import shop from '@/components/seller/shop'
+import sOrder from '@/components/seller/sOrder'
+import sEvaluation from '@/components/seller/sEvaluation'
 
 Vue.use(Router)
 
@@ -61,7 +65,26 @@ export default new Router({
     }],
   }, {
     name: 'seller',
-    path: 'seller/:username',
+    path: '/seller/:username',
     component: seller,
+    children: [
+      {
+        name: 'sInformation',
+        path: '/seller/sInformation',
+        component: sInformation,
+      }, {
+        name: 'sEvaluation',
+        path: '/seller/sEvaluation',
+        component: sEvaluation,
+      }, {
+        name: 'sOrder',
+        path: '/seller/sOrder',
+        component: sOrder,
+      }, {
+        name: 'shop',
+        path: '/seller/shop',
+        component: shop,
+      },
+    ],
   }],
 })

@@ -18,6 +18,12 @@
         <span class="text">{{passwordTip}}</span>
       </div>
     </div>
+    <div class="category">
+      <input type="radio" id="consumer" value="consumer" name="category" v-model="picked">
+      <label for="consumer">用户</label>
+      <input type="radio" id="seller" value="seller" name="category" v-model="picked">
+      <label for="seller">商家</label>
+    </div>
     <div class="submit">
       <span class="signin" @click="goAccount">登录</span>
     </div>
@@ -39,6 +45,7 @@
         password: '',
         usernameTip: '',
         passwordTip: '',
+        picked: '',
       }
     },
     methods: {
@@ -53,11 +60,16 @@
         const data = {
           username: this.username,
           password: this.password,
+          type: this.picked,
         }
         axios.post('/api/users/signin', data)
           .then((res) => {
             if (res.data.status === 0) {
-              router.push(`/consumer/${this.username}`)
+              if (this.picked === 'consumer') {
+                router.push(`/consumer/${this.username}`)
+              } else {
+                router.push(`/seller/${this.username}`)
+              }
             } else if (res.data.status === 1) {
               this.usernameTip = '账户不存在'
             } else {
@@ -139,6 +151,17 @@
         width: 100%;
         text-align: center;
         color: #fff;
+      }
+    }
+    .category {
+      padding: 5px 10px;
+      font-size: 16px;
+      text-align: center;
+      label {
+        margin-right: 10px;
+      }
+      #seller {
+        margin-left: 10px;
       }
     }
     .links {
