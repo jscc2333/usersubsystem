@@ -22,7 +22,9 @@
     </div>
     <div class="content">
       <div class="bg"></div>
-      <router-view></router-view>
+      <transition name="slide">
+        <router-view></router-view>
+      </transition>
     </div>
     <v-footer></v-footer>
   </div>
@@ -76,7 +78,7 @@
       width: 30px;
       top: 106px;
       bottom: 0;
-      transition: all .3s linear;
+      transition: all 0.3s linear;
       border-right: 1px solid rgba(147, 153, 159, 0.6);
       box-shadow: 1px 1px 2px #000;
       font-size: 0;
@@ -97,7 +99,7 @@
           height: 20px;
           font-size: 0;
           line-height: 20px;
-          transition: all .3s ease-in-out;
+          transition: all 0.3s ease-in-out;
           &:hover {
             border: 1px inset rgba(0, 160, 220, 0.8);
             background: linear-gradient(left, #fff, #f3f5f7);
@@ -115,13 +117,26 @@
       width: 90%;
       margin: 0 auto;
       padding-bottom: 30px;
+      transition: all .3s linear;
       .bg {
         z-index: -1;
         position: absolute;
         left: -10%;
         width: 115.51%;
         height: 60px;
-        background: linear-gradient(to left, rgba(147, 153, 159, 0.2), rgba(0, 160, 220, 0.8));
+        background: linear-gradient( to left,
+        rgba(147, 153, 159, 0.2),
+        rgba(0, 160, 220, 0.8));
+      }
+      .slide-enter {
+        transform: translateX(-100%);
+      }
+      .slide-leave-active {
+        transform: translateX(100%);
+      }
+      .slide-enter-active,
+      .slide-leave-active {
+        transition: all .5s linear;
       }
     }
   }

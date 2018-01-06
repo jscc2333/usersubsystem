@@ -48,7 +48,6 @@
         options: [{
           text: '账户设置',
         }],
-        signin: '签',
         editMode: false,
         editOption: true,
         avatarSrc: '',

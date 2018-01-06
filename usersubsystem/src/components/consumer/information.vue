@@ -142,6 +142,7 @@
         const data = new FormData()
         data.append('avatar', file)
         data.append('username', this.username)
+        data.append('type', 'consumer')
         const reader = new FileReader()
         reader.onload = () => {
           this.avatarSrc = e.target.result

@@ -4,20 +4,9 @@ const path = require('path');
 const fs = require('fs')
 const moment = require('moment')
 const mysql = require('mysql')
-const multer = require('multer')
 const connection = require('../public/javascripts/db')
 const utils = require('../public/javascripts/utils')
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './avatars')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname)
-  }
-})
-const upload = multer({
-  storage: storage
-})
+const upload = require('../public/javascripts/upload')('avatars')
 
 router.get('/', function (req, res, next) {
   res.send('respond with a resource');
@@ -293,7 +282,6 @@ router.post('/changeAvatar', upload.single('avatar'), (req, res, next) => {
   const data = [filename, username]
   if (req.body.type === 'consumer') {
     const updateStr = 'UPDATE consumer SET consumer_avatar = ? WHERE consumer_name = ?'
-
     connection.query(updateStr, data, (err, results) => {
       if (err) {
         throw err
