@@ -128,16 +128,16 @@
         rgba(147, 153, 159, 0.2),
         rgba(0, 160, 220, 0.8));
       }
-      .slide-enter {
-        transform: translateX(-100%);
-      }
-      .slide-leave-active {
-        transform: translateX(100%);
-      }
-      .slide-enter-active,
-      .slide-leave-active {
-        transition: all .5s linear;
-      }
+      // .slide-enter {
+      //   transform: translateX(-100%);
+      // }
+      // .slide-leave-active {
+      //   transform: translateX(100%);
+      // }
+      // .slide-enter-active,
+      // .slide-leave-active {
+      //   transition: all .5s linear;
+      // }
     }
   }
 

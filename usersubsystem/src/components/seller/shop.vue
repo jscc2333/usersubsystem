@@ -489,8 +489,10 @@
           border-radius: 10px;
           overflow: hidden;
           .goods-list {
+            box-sizing: border-box;
             width: 105%;
             height: 601px;
+            padding: 10px 20px 10px 10px;
             overflow: auto;
             font-size: 0;
             .goods-item {

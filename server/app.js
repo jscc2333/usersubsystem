@@ -13,6 +13,8 @@ const evaluations = require('./routes/evaluations')
 const orders = require('./routes/order')
 const passport = require('./routes/passport')
 const shop = require('./routes/shop')
+const sEvaluations = require('./routes/sEvaluation')
+const sOrders = require('./routes/sOrder')
 
 const app = express();
 
@@ -37,7 +39,9 @@ app.use('/collections',collections)
 app.use('/evaluations',evaluations)
 app.use('/passport',passport)
 app.use('/orders',orders)
-app.use('/shop',shop)
+app.use('/shop', shop)
+app.use('/sOrders', sOrders)
+app.use('/sEvaluations',sEvaluations)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
